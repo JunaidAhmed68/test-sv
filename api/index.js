@@ -1,14 +1,14 @@
 // api/index.js
 import express from 'express';
 import mongoose from 'mongoose';
-import userRoutes from '../routes/userRoute.js';
+import UserRoute from '../routes/userRoute.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use('/users', userRoutes);
+app.use('/users', UserRoute);
 
 mongoose.connect(process.env.MONGODB_URL)
   .then(() => console.log('MongoDB connected!'))

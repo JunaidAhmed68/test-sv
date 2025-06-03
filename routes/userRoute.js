@@ -2,9 +2,9 @@ import express from 'express';
 import User from "../models/users.js";
 
 
-let route = express.Router()
+let UserRoute = express.Router()
 
-route.get('/', async(req, res) => { // all users
+UserRoute.get('/', async(req, res) => { // all users
 
     try {
         let users = await User.find();
@@ -32,7 +32,7 @@ route.get('/', async(req, res) => { // all users
 })
 
 // params
-route.get('/:id', async (req, res) => {
+UserRoute.get('/:id', async (req, res) => {
     try {
         let { id } = req.params;
         let findUser = await User.findById(id);
@@ -61,7 +61,7 @@ route.get('/:id', async (req, res) => {
 })
 
 // Add user
-route.post('/', async (req, res) => {
+UserRoute.post('/', async (req, res) => {
     try {
         let data = req.body;
         let newUser = new User({ ...data });
@@ -83,7 +83,7 @@ route.post('/', async (req, res) => {
 });
 
 // delete user
-route.delete('/:id', async (req, res) => {
+UserRoute.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -113,7 +113,7 @@ route.delete('/:id', async (req, res) => {
 });
 
 // updates user
-route.put('/:id', async(req,res)=>{
+UserRoute.put('/:id', async(req,res)=>{
     try {
         let { id } = req.params;
         let updatedData = req.body;
@@ -137,4 +137,4 @@ route.put('/:id', async(req,res)=>{
 
 
 
-export default route;
+export default UserRoute;
