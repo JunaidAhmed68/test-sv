@@ -1,5 +1,5 @@
 import express from 'express';
-import User from "../models/users.mjs";
+import User from "../models/users.js";
 
 
 let route = express.Router()
