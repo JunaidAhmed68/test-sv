@@ -1,7 +1,7 @@
 // api/index.js
 import express from 'express';
 import mongoose from 'mongoose';
-import UserRoute from '../routes/userRoute.js';
+import UserRoute from './userRoute.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
