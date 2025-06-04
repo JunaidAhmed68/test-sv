@@ -4,6 +4,9 @@ import mongoose from 'mongoose';
 import UserRoute from './userRoute.js';
 import dotenv from 'dotenv';
 
+
+// Load environment variables from .env file
+
 dotenv.config();
 
 const app = express();
